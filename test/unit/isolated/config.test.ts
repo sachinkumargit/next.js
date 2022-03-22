@@ -53,13 +53,13 @@ describe('config', () => {
     expect(config.onDemandEntries.maxInactiveAge).toBeDefined()
   })
 
-//   it('Should allow setting objects which do not have defaults', async () => {
-//     const config = await loadConfig(PHASE_DEVELOPMENT_SERVER, null, {
-//       bogusSetting: { custom: true },
-//     })
-//     expect(config.bogusSetting).toBeDefined()
-//     expect(config.bogusSetting.custom).toBe(true)
-//   })
+  it('Should allow setting objects which do not have defaults', async () => {
+    const config = await loadConfig(PHASE_DEVELOPMENT_SERVER, null, {
+      bogusSetting: { custom: true },
+    })
+    expect(config.bogusSetting).toBeDefined()
+    expect(config.bogusSetting.custom).toBe(true)
+  })
 
   it('Should override defaults for arrays from user arrays', async () => {
     const config = await loadConfig(PHASE_DEVELOPMENT_SERVER, null, {
